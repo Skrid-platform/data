@@ -74,7 +74,7 @@ mscz-obj: $(MSCZ_DIR) $(MSCZ_OBJECTS)
 	@echo "======================="
 
 $(MSCZ_DIR)/%.mscz: $(MEI_DIR)/%.mei
-	mscore $^ -o $@
+	mscore $^ -o $@ || echo "Error while converting $^ to $@"
 
 #---PDF
 $(PDF_DIR):

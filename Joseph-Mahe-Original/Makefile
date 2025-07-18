@@ -96,7 +96,7 @@ musicxml-obj: $(MUSICXML_DIR) $(MUSICXML_OBJECTS)
 	@echo "==========================="
 
 $(MUSICXML_DIR)/%.musicxml: $(MSCZ_DIR)/%.mscz
-	mscore $^ -o $@
+	mscore $^ -o $@ || echo "Error while converting $^ to $@"
 
 #---mscz (does nothing as it is the source here)
 $(MSCZ_DIR):
@@ -120,7 +120,7 @@ pdf-obj: $(PDF_DIR) $(PDF_OBJECTS)
 	@echo "======================"
 
 $(PDF_DIR)/%.pdf: $(MSCZ_DIR)/%.mscz
-	mscore $^ -o $@
+	mscore $^ -o $@ || echo "Error while converting $^ to $@"
 
 #---Ly
 $(LY_DIR):

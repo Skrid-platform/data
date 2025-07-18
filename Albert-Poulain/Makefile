@@ -56,10 +56,10 @@ $(MEI_DIR)/%.mei: $(MUSICXML_DIR)/%.musicxml
 
 # There is a convertion problem with verovio for those two files (the only ones with two voices ...) : on the second voice, the attribute 'pname' is not set.
 $(MEI_DIR)/10343_Avant_deux.mei: $(MSCZ_DIR)/10343_Avant_deux.mscz
-	mscore $^ -o $@
+	mscore $^ -o $@ || echo "Error while converting $^ to $@"
 
 $(MEI_DIR)/10346_Ride.mei: $(MSCZ_DIR)/10346_Ride.mscz
-	mscore $^ -o $@
+	mscore $^ -o $@ || echo "Error while converting $^ to $@"
 
 #---Midi
 $(MID_DIR):
@@ -113,7 +113,7 @@ mscz-obj: $(MSCZ_DIR) $(MSCZOBJECTS)
 	@echo "======================="
 
 $(MSCZ_DIR)/%.mscz: $(MUSICXML_DIR)/%.musicxml
-	mscore $^ -o $@
+	mscore $^ -o $@ || echo "Error while converting $^ to $@"
 
 #---PDF
 $(PDF_DIR):
@@ -128,7 +128,7 @@ pdf-obj: $(PDF_DIR) $(PDF_OBJECTS)
 	@echo "======================"
 
 $(PDF_DIR)/%.pdf: $(MSCZ_DIR)/%.mscz
-	mscore $^ -o $@
+	mscore $^ -o $@ || echo "Error while converting $^ to $@"
 
 #---Ly
 $(LY_DIR):
