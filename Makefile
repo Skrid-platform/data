@@ -1,5 +1,5 @@
 #------Init
-musypher_repo_addr = https://github.com/lasercata/Musypher.git
+musypher_repo_addr = https://gitlab.inria.fr/skrid/data-ingestion.git
 DB_folders := $(filter-out Musypher/,${wildcard */})
 all_cql = ${DB_folders:%/=%/load_DB.cql}
 

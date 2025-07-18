@@ -4,7 +4,7 @@ This repository contains the source data for the SKRID platform.
 
 This data is used in two ways:
 - generation of the Neo4j database, using [`Musypher`](https://gitlab.inria.fr/skrid/data-ingestion) ;
-- serving the frontend server (that needs the MEI files).
+- served by the frontend server (that needs the MEI files).
 
 For the installation in the frontend server, please see in [its README](https://gitlab.inria.fr/skrid/frontend/-/blob/main/README.md).
 
@@ -15,6 +15,15 @@ This README explains the data generation process.
 The process is separated in two parts: each collection generates all the files by converting from the source, and then the MEI files are converted to cypher dumps.
 
 The conversion from MEI to cypher graph dump is handled by the [`Musypher`](https://gitlab.inria.fr/skrid/data-ingestion) program.
+
+## Source files
+The initial format for the scores depends of the collection.
+It is described in each folder (in the corresponding README).
+
+But for all collections, the MEI files are included, as it is directly used by the frontend server in order to display the previews.
+
+Please note that the ID present in the MEI files (for the notes, chords, ...) seems to be generated randomly.
+But they need to correspond to the IDs in the Neo4j database, so be sure to use the same MEI files for the frontend server and to generate the database (with [Musypher](https://gitlab.inria.fr/gitlab/skrid/data-ingestion)), and do not regenerate the MEI files.
 
 ## File structure
 ```
