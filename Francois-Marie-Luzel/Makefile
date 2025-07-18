@@ -34,7 +34,8 @@ ARCHIVES = $(ARCHIVES_DIR)/$(collection)_FilesAll.zip $(ARCHIVES_DIR)/$(collecti
 #------Rules
 #---All
 .PHONY: all
-all: $(DIRS) metadata mei-obj mid-obj svg-obj archives-obj $(CYPHER_DIR)
+# all: $(DIRS) metadata mei-obj mid-obj svg-obj archives-obj $(CYPHER_DIR)
+all: $(DIRS) metadata mid-obj svg-obj archives-obj $(CYPHER_DIR)
 #TODO: add ly-obj
 
 #---Mei
