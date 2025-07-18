@@ -30,7 +30,7 @@ ARCHIVES = $(ARCHIVES_DIR)/$(collection)_FilesAll.zip $(ARCHIVES_DIR)/$(collecti
 #---All
 .PHONY: all
 # all: $(DIRS) mid-obj svg-obj mscz-obj pdf-obj ly-obj archives-obj $(CYPHER_DIR)
-all: $(DIRS) mid-obj svg-obj mscz-obj pdf-obj archives-obj $(CYPHER_DIR)
+all: $(DIRS) mid-obj svg-obj mscz-obj pdf-obj $(CYPHER_DIR)
 
 #TODO: support the ly files
 
