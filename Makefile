@@ -14,6 +14,8 @@ all: load_all_DB.cql
 #---Get Musypher from repo
 Musypher:
 	git clone $(musypher_repo_addr) $@
+	cd $@
+	pip install -r requirements.txt
 
 #---Run the makefile in each folder to generate the makefile, and make the cypher dumps with Musypher
 %/load_DB.cql: Musypher
