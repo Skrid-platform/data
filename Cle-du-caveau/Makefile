@@ -24,7 +24,7 @@ LY_OBJECTS := $(patsubst $(MEI_DIR)/%.mei, $(LY_DIR)/%.ly, $(SOURCES))
 SVG_OBJECTS := $(patsubst $(MEI_DIR)/%.mei, $(SVG_DIR)/%.svg, $(SOURCES))
 PDF_OBJECTS := $(patsubst $(MEI_DIR)/%.mei, $(PDF_DIR)/%.pdf, $(SOURCES))
 
-ARCHIVES = $(ARCHIVES_DIR)/$(collection)_FilesAll.zip $(ARCHIVES_DIR)/$(collection)_FilesSvg.zip $(ARCHIVES_DIR)/$(collection)_FilesMei.zip $(ARCHIVES_DIR)/$(collection)_FilesMid.zip $(ARCHIVES_DIR)/$(collection)_FilesPdf.zip $(ARCHIVES_DIR)/$(collection)_FilesLy.zip
+ARCHIVES = $(ARCHIVES_DIR)/$(collection)_FilesAll.zip $(ARCHIVES_DIR)/$(collection)_FilesSvg.zip $(ARCHIVES_DIR)/$(collection)_FilesMei.zip $(ARCHIVES_DIR)/$(collection)_FilesMid.zip $(ARCHIVES_DIR)/$(collection)_FilesPdf.zip # $(ARCHIVES_DIR)/$(collection)_FilesLy.zip
 
 #------Rules
 #---All
@@ -123,7 +123,7 @@ archives-obj: $(ARCHIVES_DIR) $(ARCHIVES)
 	@echo "Archives created."
 	@echo "================="
 
-$(ARCHIVES_DIR)/$(collection)_FilesAll.zip: $(MSCZ_OBJECTS) $(MEI_OBJECTS) $(SVG_OBJECTS) $(PDF_OBJECTS) $(MID_OBJECTS) $(LY_OBJECTS)
+$(ARCHIVES_DIR)/$(collection)_FilesAll.zip: $(MSCZ_OBJECTS) $(MEI_OBJECTS) $(SVG_OBJECTS) $(PDF_OBJECTS) $(MID_OBJECTS) # $(LY_OBJECTS)
 	@echo "All ..."
 	@zip -9 -y -r -q $@ $^
 
