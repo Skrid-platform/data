@@ -65,7 +65,7 @@ mid-obj: $(MID_DIR) $(MID_OBJECTS)
 	@echo "Converted to MIDI files"
 	@echo "======================="
 
-$(MID_DIR)/%.mid: $(MUSICXML_DIR)/%.mei
+$(MID_DIR)/%.mid: $(MEI_DIR)/%.mei
 	@verovio $^ -t midi -o $@
 
 #---SVG
@@ -80,7 +80,7 @@ svg-obj: $(SVG_DIR) $(SVG_OBJECTS)
 	@echo "Converted to SVG files"
 	@echo "======================"
 
-$(SVG_DIR)/%.svg: $(MUSICXML_DIR)/%.mei
+$(SVG_DIR)/%.svg: $(MEI_DIR)/%.mei
 	@verovio $^ -t svg -o $@
 
 #---musicxml
