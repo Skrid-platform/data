@@ -7,9 +7,6 @@ MEI_DIR = mei
 CYPHER_DIR = cypher
 
 #------Rules
-.PHONY: test
-test:
-	@echo $(DB_folders)
 #---All
 .PHONY: all
 all: load_all_DB.cql
