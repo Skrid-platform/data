@@ -1,12 +1,15 @@
 #------Init
 musypher_repo_addr = https://gitlab.inria.fr/skrid/data-ingestion.git
-DB_folders := $(filter-out Musypher/,${wildcard */})
+DB_folders := $(filter-out Musypher/ venv/,${wildcard */})
 all_cql = ${DB_folders:%/=%/load_DB.cql}
 
 MEI_DIR = mei
 CYPHER_DIR = cypher
 
 #------Rules
+.PHONY: test
+test:
+	@echo $(DB_folders)
 #---All
 .PHONY: all
 all: load_all_DB.cql
