@@ -50,8 +50,8 @@ mei-obj: $(MEI_DIR) $(MEI_OBJECTS)
 	@echo "Converted to MEI files"
 	@echo "======================"
 
-$(MEI_DIR)/%.mei: $(MUSICXML_DIR)/%.musicxml
-	@verovio $< -t mei -o $@
+# $(MEI_DIR)/%.mei: $(MUSICXML_DIR)/%.musicxml
+# 	@verovio $< -t mei -o $@
 
 #---Midi
 $(MID_DIR):
