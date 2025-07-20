@@ -128,8 +128,10 @@ pdf-obj: $(PDF_DIR) $(PDF_OBJECTS)
 	@echo "Converted to PDF files"
 	@echo "======================"
 
-$(PDF_DIR)/%.pdf: $(MSCZ_DIR)/%.mscz
-	mscore $^ -o $@ || echo "Error while converting $^ to $@"
+# Conversion SVG -> PDF avec rsvg-convert
+$(PDF_DIR)/%.pdf: $(SVG_DIR)/%.svg
+	@echo "Converting $< to $@"
+	@rsvg-convert -f pdf -o "$@" "$<"
 
 #---Ly
 $(LY_DIR):
